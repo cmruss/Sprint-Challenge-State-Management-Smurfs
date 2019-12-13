@@ -3,6 +3,7 @@ import {
     FETCH_SMURF_SUCCESS,
     FETCH_SMURF_FAILURE,
     POST_SMURF,
+    DELETE_SMURF
 } from '../actions';
 
 const initialState = {
@@ -37,6 +38,8 @@ const reducer = (state = initialState, action) => {
                 error: action.payload
             };
         case POST_SMURF:
+            return state;
+        case DELETE_SMURF:
             return state;
         default:
             return state;

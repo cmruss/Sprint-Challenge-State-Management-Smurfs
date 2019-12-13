@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react';
 import { connect } from 'react-redux';
-import { getSmurfs } from '../actions';
+import { getSmurfs, deleteSmurf } from '../actions';
 import Smurf from './Smurf'
 
 const Smurfs = ({getSmurfs, ...props}) => {
@@ -13,7 +13,7 @@ const Smurfs = ({getSmurfs, ...props}) => {
         <div>
             <h2>Smurfs in the Village:</h2>
             {props.smurfs.map(smurf =>
-                <Smurf smurf={smurf} key={smurf.id}/> )}
+                <Smurf smurf={smurf} key={smurf.id} deleteSmurf={props.deleteSmurf}/> )}
         </div>
     );
 };
@@ -28,5 +28,5 @@ const mapStateTopProps = state => {
 
 export default connect(
     mapStateTopProps,
-    {getSmurfs}
+    {getSmurfs, deleteSmurf}
     )(Smurfs);

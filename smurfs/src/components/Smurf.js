@@ -6,8 +6,11 @@ const Smurf = props => {
             <h2>{props.smurf.name}</h2>
             <h3>age: {props.smurf.age}</h3>
             <h3>height: {props.smurf.height}</h3>
+            <button onClick={()=>{props.deleteSmurf(props.smurf.id)}}>delete</button>
         </div>
     );
 };
+
+
 
 export default Smurf;
